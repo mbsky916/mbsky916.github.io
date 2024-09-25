@@ -1,0 +1,142 @@
+baseurl: https://shitao5.org/
+# 基础网址：https://shitao5.org/
+
+languageCode: en-us
+# 语言代码：en-us
+
+title: "地平线|Horizon"
+# 标题："地平线|Horizon"
+
+theme: hugo-lithium
+# 主题：hugo-lithium
+
+hasCJKLanguage: true
+# 包含中日韩语言：true
+
+enableEmoji: true
+# 启用表情符号：true
+
+footnotereturnlinkcontents: "↩"
+# 脚注返回链接内容："↩"
+
+ignoreFiles: ["\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
+# 忽略的文件：["\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
+
+features: ["blog"]
+# 功能：["blog"]
+
+googleAnalytics: "G-TKPT8Q5NBV"
+# 谷歌分析代码："G-TKPT8Q5NBV"
+
+permalinks:
+  post: /:year/:month/:slug/
+  # 永久链接格式：/:year/:month/:slug/
+
+outputs:
+  home: [html, rss, json]
+  # 输出格式：主页：[html, rss, json]
+
+author:
+  name: "吴诗涛"
+  # 作者姓名："吴诗涛"
+
+menu:
+  main:
+    - name: 首页
+      url: "/"
+      weight: 1
+    # 菜单项：首页，链接："/"，权重：1
+
+    - name: 关于
+      url: "/about/"
+      weight: 2
+    # 菜单项：关于，链接："/about/"，权重：2
+
+    - name: 日志
+      url: "/posts/"
+      weight: 3
+    # 菜单项：日志，链接："/posts/"，权重：3
+
+    - name: 总结
+      url: "/summary/"
+      weight: 4
+    # 菜单项：总结，链接："/summary/"，权重：4
+
+    # - name: 读论文
+    #   url: "/paper/"
+    #   weight: 5
+    # 菜单项：读论文（注释掉），链接："/paper/"，权重：5
+
+    - name: 搜索
+      url: "/search/"
+      weight: 6
+    # 菜单项：搜索，链接："/search/"，权重：6
+
+    - name: 👋对话
+      url: "/chat/"
+      weight: 8
+    # 菜单项：对话，链接："/chat/"，权重：8
+
+    # - name: 随记
+    #   url: "/moments/"
+    #   weight: 7
+    # 菜单项：随记（注释掉），链接："/moments/"，权重：7
+
+    - name: 🎯订阅
+      url: "/index.xml"
+      weight: 9
+    # 菜单项：订阅，链接："/index.xml"，权重：9
+
+params:
+  footer: "&copy; [Shitao Wu](/) 2019 - {Year}"
+  # 页脚内容："&copy; [Shitao Wu](/) 2019 - {Year}"
+
+  logo:
+    en:
+      alt: logo
+      img: "logo.png"
+    # Logo 配置：alt 属性："修狗"，图片路径："logo.png"
+
+  customJS:
+    - "comment-utils.js"
+    - "hash-notes.js"
+    - "toggle-notes.js"
+    - "post-nav.js"
+  # 自定义 JavaScript 文件：["comment-utils.js", "hash-notes.js", "toggle-notes.js", "post-nav.js"]
+
+  githubContentURL: "https://github.com/Shitao5/shitao-blog/edit/main/content/"
+  # GitHub 内容 URL："https://github.com/Shitao5/shitao-blog/edit/main/content/"
+
+  lang:
+    edit:
+      en: "编辑"
+    # 语言配置：编辑，英文："编辑"
+
+    license:
+      en: "版权"
+    # 语言配置：版权，英文："版权"
+
+    search:
+      en: "搜索"
+    # 语言配置：搜索，英文："搜索"
+
+    top:
+      cn: "登顶"
+    # 语言配置：登顶，中文："登顶"
+
+markup:
+  highlight:
+    codeFences: true
+    style: "github"
+  # 代码高亮配置：启用代码围栏：true，样式："github"
+
+  goldmark:
+    renderer:
+      unsafe: true
+    parser:
+      autoHeadingIDType: blackfriday
+  # Goldmark 渲染器配置：不安全渲染：true，自动标题 ID 类型："blackfriday"
+
+  tableOfContents:
+    startLevel: 1
+  # 目录配置：开始级别：1
