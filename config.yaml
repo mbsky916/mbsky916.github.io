@@ -37,7 +37,7 @@ outputs:
   # 输出格式：主页：[html, rss, json]
 
 author:
-  name: "吴诗涛"
+  name: "地平线"
   # 作者姓名："吴诗涛"
 
 menu:
@@ -88,7 +88,7 @@ menu:
     # 菜单项：订阅，链接："/index.xml"，权重：9
 
 params:
-  footer: "&copy; [Shitao Wu](/) 2019 - {Year}"
+  footer: "&copy; [愿时光能缓，愿故人不散。](/) 2024 - {Year}"
   # 页脚内容："&copy; [Shitao Wu](/) 2019 - {Year}"
 
   logo:

@@ -1,6 +1,6 @@
 ---
-title: 关于诗涛
-date: "2024-09-05"
+title: 关于地平线
+date: "2024-09-26"
 comments: yes
 toc: yes
 ---
