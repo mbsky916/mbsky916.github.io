@@ -1,6 +1,6 @@
 ---
-title: 和诗涛对话
-date: "2024-04-26"
+title: 和地平线对话
+date: "2024-09-26"
 comments: yes
 ---
 
