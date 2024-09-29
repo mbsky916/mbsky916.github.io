@@ -1,10 +1,10 @@
 {{ if and (not .Params.disable_comments) (or (eq .Kind "404") (and (not .IsHome) .Content)) }}
 <section class="comments">
 <script {{ if $.Site.BuildDrafts }}data-{{ end }}src="https://giscus.app/client.js"
-  data-repo="Shitao5/shitao-blog"
-  data-repo-id="R_kgDOHo4y9A"
-  data-category="Comments"
-  data-category-id="DIC_kwDOHo4y9M4CZrtC"
+  data-repo="mbsky916/mbsky916.github.io"
+  data-repo-id="R_kgDOM21I2g"
+  data-category="Announcements"
+  data-category-id="DIC_kwDOM21I2s4Ci5Hr"
   data-mapping="{{ if eq $.Kind "404" }}number{{ else }}pathname{{ end }}"
   {{ if eq $.Kind "404" }}data-term="949"{{ end }}
   data-strict="0"
