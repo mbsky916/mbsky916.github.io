@@ -1,84 +1,77 @@
 baseURL: "https://horizonzhao.netlify.app/"
 title: "地平线 | Horizon"
 locale: "zh-cn"
-defaultContentLanguage: "zh"
-theme: "papermod"
+theme: "stack"
 enableRobotsTXT: true
 enableEmoji: true
 paginate: 10
 
 params:
-  env: production
-  title: "地平线 | Horizon"
+  mainSections:
+    - posts
   description: "记录所思所想及日常。所行即所愿。"
-  keywords: [个人博客, 内审, 记录, 成长]
   author: "地平线"
-  DateFormat: "2006-01-02"
-  defaultTheme: auto
-  disableThemeToggle: false
-  ShowReadingTime: true
-  ShowShareButtons: false
-  ShowPostNavLinks: true
-  ShowBreadCrumbs: true
-  ShowCodeCopyButtons: true
-  ShowWordCount: false
-  ShowRssButtonInSectionTermList: true
-  UseHugoToc: true
-  disableSpecial1stPost: false
-  disableScrollToTop: false
-  comments: true
-  hidemeta: false
-  hideSummary: false
-  showtoc: true
-  tocopen: false
-  giscus:
-    repo: "mbsky916/mbsky916.github.io"
-    repoID: "R_kgDOM21I2g"
-    category: "Announcements"
-    categoryID: "DIC_kwDOM21I2s4Ci5Hr"
-    mapping: "pathname"
-    strict: "0"
-    reactionsEnabled: "1"
-    emitMetadata: "0"
-    inputPosition: "bottom"
-    theme: "preferred_color_scheme"
-    lang: "zh-CN"
-    crossorigin: "anonymous"
-  label:
-    text: "地平线"
-    icon: "/logo.png"
-    iconHeight: 35
-  homeInfoParams:
-    Title: "地平线"
-    Content: >
-      湖北襄阳人，1992年生，现居武汉，内部审计监察从业者。
-
-      这里记录我的所思所想及日常。所行即所愿。
-  socialIcons:
-    - name: github
-      url: "https://github.com/mbsky916"
-  editPost:
-    URL: "https://github.com/mbsky916/blog-edit/main/content"
-    Text: "编辑"
-    appendFilePath: true
+  sidebar:
+    emoji: "🌊"
+    subtitle: "湖北襄阳人，1992年生，现居武汉，内部审计监察从业者。这里记录我的所思所想及日常。"
+    avatar: "img/avatar.png"
+  widgets:
+    enabled:
+      - search
+      - archives
+      - tag-cloud
+  colorScheme:
+    toggle: true
+    default: auto
+  article:
+    math: false
+    toc: true
+    readingTime: true
+    license:
+      enabled: true
+      default: "Licensed under CC BY-NC-SA 4.0"
+  comments:
+    enabled: true
+    provider: giscus
+    giscus:
+      repo: "mbsky916/mbsky916.github.io"
+      repoID: "R_kgDOM21I2g"
+      category: "Announcements"
+      categoryID: "DIC_kwDOM21I2s4Ci5Hr"
+      mapping: "pathname"
+      strict: "0"
+      reactionsEnabled: "1"
+      emitMetadata: "0"
+      inputPosition: "bottom"
+      lightTheme: "light"
+      darkTheme: "dark"
+      lang: "zh-CN"
+      loading: "lazy"
 
 menu:
   main:
+    - identifier: home
+      name: 首页
+      url: /
+      weight: 1
     - identifier: posts
-      name: 文章
+      name: 日志
       url: /posts/
-      weight: 10
+      weight: 2
+    - identifier: summary
+      name: 总结
+      url: /summary/
+      weight: 3
     - identifier: about
       name: 关于
       url: /about/
-      weight: 20
+      weight: 4
     - identifier: search
       name: 搜索
       url: /search/
-      weight: 30
+      weight: 5
 
 outputs:
   home:
     - HTML
     - RSS
-    - JSON

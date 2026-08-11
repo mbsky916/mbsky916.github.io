@@ -1,0 +1,36 @@
+/* 地平线主题定制：深青绿主色 + 暖白背景（日出地平线意象） */
+:root {
+    --body-background: #faf9f6;
+    --accent-color: #2f6b5f;
+    --accent-color-darker: #24534a;
+    --accent-color-text: #fff;
+    --body-text-color: #4a4a4a;
+
+    &[data-scheme="dark"] {
+        --body-background: #22282b;
+        --accent-color: #7ab3a4;
+        --accent-color-darker: #639b8c;
+        --accent-color-text: #14201d;
+        --body-text-color: rgba(255, 255, 255, 0.72);
+    }
+}
+
+:root {
+    --card-background: #ffffff;
+    --card-background-selected: #f0f4f2;
+
+    &[data-scheme="dark"] {
+        --card-background: #2a3236;
+        --card-background-selected: #333d42;
+    }
+}
+
+:root {
+    --tag-background: #e9f0ed;
+    --tag-text-color: #2f6b5f;
+
+    &[data-scheme="dark"] {
+        --tag-background: #37474a;
+        --tag-text-color: #8fc4b5;
+    }
+}
