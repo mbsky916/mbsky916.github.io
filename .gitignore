@@ -1,13 +1,5 @@
-.Rproj.user
-.Rhistory
-.RData
-.Ruserdata
+public/
+resources/
 .hugo_build.lock
-*cache/
 .DS_Store
-Thumbs.db
-/public/
-/resources/
-.Rdata
-.httr-oauth
-/stopwrite/
+*.log

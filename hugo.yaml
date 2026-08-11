@@ -1,0 +1,71 @@
+baseURL: "https://horizonzhao.netlify.app/"
+title: "地平线 | Horizon"
+locale: "zh-cn"
+defaultContentLanguage: "zh"
+theme: "PaperMod"
+enableRobotsTXT: true
+enableEmoji: true
+paginate: 10
+
+params:
+  env: production
+  title: "地平线 | Horizon"
+  description: "记录所思所想及日常。所行即所愿。"
+  keywords: [个人博客, 内审, 记录, 成长]
+  author: "地平线"
+  DateFormat: "2006-01-02"
+  defaultTheme: auto
+  disableThemeToggle: false
+  ShowReadingTime: true
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: false
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showtoc: true
+  tocopen: false
+  label:
+    text: "地平线"
+    icon: "/logo.png"
+    iconHeight: 35
+  homeInfoParams:
+    Title: "地平线"
+    Content: >
+      湖北襄阳人，1992年生，现居武汉，内部审计监察从业者。
+
+      这里记录我的所思所想及日常。所行即所愿。
+  socialIcons:
+    - name: github
+      url: "https://github.com/mbsky916"
+  editPost:
+    URL: "https://github.com/mbsky916/blog-edit/main/content"
+    Text: "编辑"
+    appendFilePath: true
+
+menu:
+  main:
+    - identifier: posts
+      name: 文章
+      url: /posts/
+      weight: 10
+    - identifier: about
+      name: 关于
+      url: /about/
+      weight: 20
+    - identifier: search
+      name: 搜索
+      url: /search/
+      weight: 30
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON

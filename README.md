@@ -1,7 +1,24 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/7aaa1cfe-60e4-4e8e-a84d-e6ae25d4434c/deploy-status)](https://app.netlify.com/sites/shitao/deploys)
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-lightgrey" /></a><br />
----
+# 地平线 | Horizon
 
-This is the source file for [Shitao's personal website](https://shitao5.org/). The website is built using [blogdown](https://github.com/rstudio/blogdown) and utilizes the [Paged](https://paged.yihui.org/) theme. The commenting system used is [Giscus](https://giscus.app/), and it is licensed under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+个人博客源码。记录所思所想及日常。
 
-这是诗涛个人网站 <https://shitao5.org/> 的源文件。网站是用 [blogdown](https://github.com/rstudio/blogdown) 搭建的，使用了 [Paged](https://paged.yihui.org/) 主题，评论系统采用的是 [Giscus](https://giscus.app/)，并采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。
+## 技术栈
+
+- [Hugo](https://gohugo.io/) + [PaperMod](https://github.com/adityatelange/hugo-PaperMod) 主题
+- 部署：Netlify（https://horizonzhao.netlify.app/）
+- 内容：Markdown，位于 `content/`
+
+## 本地构建
+
+```bash
+hugo server -D   # 本地预览
+hugo --gc --minify  # 构建到 public/
+```
+
+## 发布流程
+
+日常记录在知识库，每周精选成文 → 推送到本仓库 → Netlify 自动构建上线。
+
+## 历史
+
+本仓库 2024-09 建立，最初为 blogdown (R) 技术栈；2026-08 迁移至 Hugo。
