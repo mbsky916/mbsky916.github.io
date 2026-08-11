@@ -31,6 +31,20 @@ params:
   hideSummary: false
   showtoc: true
   tocopen: false
+  comments: true
+  giscus:
+    repo: "mbsky916/mbsky916.github.io"
+    repoID: "R_kgDOM21I2g"
+    category: "Announcements"
+    categoryID: "DIC_kwDOM21I2s4Ci5Hr"
+    mapping: "pathname"
+    strict: "0"
+    reactionsEnabled: "1"
+    emitMetadata: "0"
+    inputPosition: "bottom"
+    theme: "preferred_color_scheme"
+    lang: "zh-CN"
+    crossorigin: "anonymous"
   label:
     text: "地平线"
     icon: "/logo.png"
