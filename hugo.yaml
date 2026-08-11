@@ -1,77 +1,42 @@
 baseURL: "https://horizonzhao.netlify.app/"
 title: "地平线 | Horizon"
 locale: "zh-cn"
-theme: "stack"
+theme: "paged"
 enableRobotsTXT: true
 enableEmoji: true
 paginate: 10
 
 params:
-  mainSections:
-    - posts
   description: "记录所思所想及日常。所行即所愿。"
-  author: "地平线"
-  sidebar:
-    emoji: "🌊"
-    subtitle: "湖北襄阳人，1992年生，现居武汉，内部审计监察从业者。这里记录我的所思所想及日常。"
-    avatar: "img/avatar.png"
-  widgets:
-    enabled:
-      - search
-      - archives
-      - tag-cloud
-  colorScheme:
-    toggle: true
-    default: auto
-  article:
-    math: false
-    toc: true
-    readingTime: true
-    license:
-      enabled: true
-      default: "Licensed under CC BY-NC-SA 4.0"
-  comments:
-    enabled: true
-    provider: giscus
-    giscus:
-      repo: "mbsky916/mbsky916.github.io"
-      repoID: "R_kgDOM21I2g"
-      category: "Announcements"
-      categoryID: "DIC_kwDOM21I2s4Ci5Hr"
-      mapping: "pathname"
-      strict: "0"
-      reactionsEnabled: "1"
-      emitMetadata: "0"
-      inputPosition: "bottom"
-      lightTheme: "light"
-      darkTheme: "dark"
-      lang: "zh-CN"
-      loading: "lazy"
+  author:
+    posts: "地平线"
+    summary: "地平线"
+    about: "地平线"
+  footer: "&copy; [地平线](https://horizonzhao.netlify.app) {Year} · 所行即所愿"
+  logo:
+    zh:
+      alt: "地平线"
+      img: "/images/logo.png"
 
 menu:
   main:
-    - identifier: home
-      name: 首页
+    - name: 首页
       url: /
       weight: 1
-    - identifier: posts
-      name: 日志
+    - name: 日志
       url: /posts/
       weight: 2
-    - identifier: summary
-      name: 总结
+    - name: 总结
       url: /summary/
       weight: 3
-    - identifier: about
-      name: 关于
+    - name: 关于
       url: /about/
       weight: 4
-    - identifier: search
-      name: 搜索
+    - name: 搜索
       url: /search/
       weight: 5
 
-outputs:
-  home:
-    - HTML
-    - RSS
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
