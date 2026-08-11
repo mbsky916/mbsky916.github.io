@@ -2,7 +2,6 @@
 title: 跟着忙总学习工作日志
 author: 地平线
 date: '2025-08-27'
-slug: 开篇要求
 categories: []
 tags:
   - 工作日志
