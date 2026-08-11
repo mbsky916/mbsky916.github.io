@@ -105,6 +105,204 @@ span.hash-note::before { content: "　# "; }
   }
 }
 
-.logo img {
+.nav-top {
+  align-items: center;
+  height: 3.25rem;
+  padding: 0 0 0.25rem;
+  position: relative;
+  border-bottom: none;
+  overflow: visible;
+}
+.nav-top .logo {
+  margin-top: 0;
+  line-height: 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.nav-top .logo a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50% !important;
+  overflow: hidden !important;
   background: white;
+}
+.nav-top .menu {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.nav-top .menu span {
+  margin-top: 0;
+  line-height: 1;
+}
+.nav-top::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1rem;
+  border-bottom: 1px solid currentColor;
+  z-index: 0;
+}
+.nav-top .logo picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  vertical-align: middle;
+  position: relative;
+}
+.nav-top .logo picture img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  position: static !important;
+  top: auto !important;
+  max-height: none !important;
+  object-fit: cover;
+}
+.nav-top .logo img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  background: white;
+  position: static !important;
+  top: auto !important;
+  max-height: none !important;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+/* 中文没有斜体 */
+h1.title:lang(zh-CN) {
+  font-style: unset;
+}
+
+.updated-block {
+  margin: 1.5rem 0;
+  padding: 1rem 1.1rem 1.6rem;
+  border: 1px solid rgba(255, 152, 0, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 152, 0, 0.03);
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  position: relative;
+}
+
+.updated-block-removed {
+  border-color: rgba(96, 125, 139, 0.24);
+  background: rgba(96, 125, 139, 0.02);
+}
+
+.updated-meta {
+  font-size: 0.75rem;
+  color: #616161;
+  position: absolute;
+  right: 1rem;
+  bottom: -0.45rem;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  white-space: nowrap;
+}
+
+.updated-content-removed {
+  color: rgba(55, 71, 79, 0.45);
+  text-decoration: line-through;
+  text-decoration-color: rgba(55, 71, 79, 0.35);
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.updated-block-removed:hover .updated-content-removed,
+.updated-block-removed:focus-within .updated-content-removed {
+  color: #2b2b2b;
+  text-decoration: none;
+}
+
+.updated-content-removed p,
+.updated-content-removed li {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.updated-block-removed:hover .updated-content-removed p,
+.updated-block-removed:hover .updated-content-removed li,
+.updated-block-removed:focus-within .updated-content-removed p,
+.updated-block-removed:focus-within .updated-content-removed li {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.main p > img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main p > picture {
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main picture > img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main figure {
+  text-align: center;
+}
+
+/* Keep hugo-paged list counters after KaTeX resets body counters. */
+html body {
+  counter-reset: pageNumber katexEqnNo mmlEqnNo;
+}
+
+.summary-doc {
+  margin: 1.5rem 0 2.5rem;
+}
+
+.summary-doc__toc {
+  margin-bottom: 1rem;
+}
+
+.summary-doc__body {
+  line-height: 1.7;
+}
+
+.summary-doc__toc .toc-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.5rem;
+  padding-left: 1.25rem;
+  margin: 0;
+  justify-content: flex-start;
+}
+
+.summary-doc__toc .toc-list > li {
+  flex: 0 0 calc(50% - 0.75rem);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .summary-doc__toc .toc-list > li {
+    flex-basis: calc(33.333% - 1rem);
+  }
+}
+
+@media (min-width: 1280px) {
+  .summary-doc__toc .toc-list > li {
+    flex-basis: calc(25% - 1.125rem);
+  }
 }
