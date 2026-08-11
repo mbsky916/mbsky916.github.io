@@ -1,4 +1,5 @@
 ---
+comments: true
 title: 跟着忙总学习工作日志
 author: 地平线
 date: '2025-08-27'

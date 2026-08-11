@@ -26,12 +26,11 @@ params:
   UseHugoToc: true
   disableSpecial1stPost: false
   disableScrollToTop: false
-  comments: false
+  comments: true
   hidemeta: false
   hideSummary: false
   showtoc: true
   tocopen: false
-  comments: true
   giscus:
     repo: "mbsky916/mbsky916.github.io"
     repoID: "R_kgDOM21I2g"

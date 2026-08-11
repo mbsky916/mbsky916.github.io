@@ -1,4 +1,5 @@
 ---
+comments: true
 title: "认识自己：人生阶段性总结"
 date: 2024-10-28
 tags: ["总结", "思考"]
