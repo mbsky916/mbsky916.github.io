@@ -14,7 +14,7 @@ params:
     about: "地平线"
   footer: "&copy; [地平线](https://horizonzhao.netlify.app) {Year} · 所行即所愿"
   logo:
-    zh:
+    en:
       alt: "地平线"
       img: "/images/logo.png"
 
@@ -35,9 +35,6 @@ menu:
     - name: 搜索
       url: /search/
       weight: 5
-    - name: 订阅
-      url: /index.xml
-      weight: 6
 
 markup:
   goldmark:
