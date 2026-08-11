@@ -2,7 +2,7 @@ baseURL: "https://horizonzhao.netlify.app/"
 title: "地平线 | Horizon"
 locale: "zh-cn"
 defaultContentLanguage: "zh"
-theme: "PaperMod"
+theme: "papermod"
 enableRobotsTXT: true
 enableEmoji: true
 paginate: 10
