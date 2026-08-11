@@ -35,6 +35,9 @@ menu:
     - name: 搜索
       url: /search/
       weight: 5
+    - name: 订阅
+      url: /index.xml
+      weight: 6
 
 markup:
   goldmark:

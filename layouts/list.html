@@ -1,0 +1,16 @@
+{{ define "page-list" }}
+{{ $prevMonth := "" }}
+{{ range .RegularPages }}
+{{ $m := .Date.Format "2006-01" }}
+{{ if ne $m $prevMonth }}
+{{ if $prevMonth }}</div>{{ end }}
+<div class="list-group" data-month="{{ $m }}">
+{{ $prevMonth = $m }}
+{{ end }}
+<div class="list-item">
+<span class="list-date">{{ .Date.Format "2006-01-02" }}</span>
+<a class="list-title" href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
+</div>
+{{ end }}
+</div>
+{{ end }}

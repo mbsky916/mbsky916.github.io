@@ -306,3 +306,134 @@ html body {
     flex-basis: calc(25% - 1.125rem);
   }
 }
+
+/* ===== 日志页：日期+标题列表，按月份分组，多列流式 ===== */
+.list-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15em 2.5em;
+  margin: 1.2em 0 2.2em;
+}
+.list-item {
+  flex: 0 0 auto;
+  max-width: 100%;
+  white-space: nowrap;
+}
+.list-date {
+  color: #999;
+  font-size: 0.85em;
+  margin-right: 0.6em;
+  font-family: var(--sys-font-family), sans-serif;
+}
+.list-title {
+  color: #1a1a1a;
+  font-size: 0.95em;
+}
+
+/* ===== 关于页：TOC 灰框 ===== */
+.toc-box {
+  background: #f2f2f2;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 1em 1.5em;
+  margin: 1.5em 0 2.5em;
+  display: flex;
+  gap: 3em;
+  font-family: var(--sys-font-family), sans-serif;
+}
+.toc-box p {
+  margin: 0.4em 0;
+  font-weight: 600;
+  font-size: 0.9em;
+}
+
+/* ===== 关于页：文字+图分栏 ===== */
+.two-col {
+  display: flex;
+  gap: 2.5em;
+  align-items: flex-start;
+  margin: 2em 0;
+}
+.col-text {
+  flex: 0 0 62%;
+  line-height: 1.75;
+}
+.col-img {
+  flex: 0 0 30%;
+}
+.col-img img {
+  width: 100%;
+  max-width: 220px;
+  border-radius: 4px;
+}
+
+/* ===== 格言居中斜体 ===== */
+.quote-center {
+  text-align: center;
+  margin: 2.5em 0;
+  color: #555;
+}
+
+/* ===== 副标题斜体（Paged subtitle） ===== */
+.subtitle {
+  font-style: italic;
+  font-weight: normal;
+  color: #666;
+}
+
+/* ===== 导航 active 下划线 ===== */
+.nav-top .menu span.active a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ===== 总结页：周索引 TOC（4 列 + 左竖线） ===== */
+body.summary #TableOfContents {
+  columns: 4;
+  column-gap: 2.5em;
+  border-left: 1px solid #c0c0c0;
+  padding-left: 1.5em;
+  margin: 1.5em 0 2.5em;
+}
+body.summary #TableOfContents ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+body.summary #TableOfContents li {
+  margin: 0.35em 0;
+  white-space: nowrap;
+  font-size: 0.95em;
+}
+body.summary #TableOfContents a {
+  font-weight: 600;
+}
+body.summary #TableOfContents a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
+  body.summary #TableOfContents { columns: 2; }
+}
+
+/* ===== 关于页：TOC 灰框两列 ===== */
+body.about #TableOfContents {
+  background: #f2f2f2;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 1em 1.5em;
+  margin: 1.5em 0 2.5em;
+  columns: 2;
+  column-gap: 3em;
+  list-style: none;
+}
+body.about #TableOfContents ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+body.about #TableOfContents li {
+  margin: 0.4em 0;
+  font-weight: 600;
+  font-size: 0.9em;
+  font-family: var(--sys-font-family), sans-serif;
+}
