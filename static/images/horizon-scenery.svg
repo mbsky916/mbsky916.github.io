@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7fa8c9"/>
+      <stop offset="45%" stop-color="#c9a97c"/>
+      <stop offset="70%" stop-color="#f2c48d"/>
+      <stop offset="100%" stop-color="#f8d9a8"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b8773f"/>
+      <stop offset="20%" stop-color="#7a8f9e"/>
+      <stop offset="100%" stop-color="#3d5a6e"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffe9b8"/>
+      <stop offset="100%" stop-color="#f2a05a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 天空 -->
+  <rect x="0" y="0" width="800" height="340" fill="url(#sky)"/>
+
+  <!-- 太阳（半圆，刚出地平线） -->
+  <path d="M 400 340 A 90 90 0 0 1 220 340 Z" fill="url(#sun)"/>
+
+  <!-- 太阳倒影（海面金色光带） -->
+  <g opacity="0.55">
+    <rect x="360" y="345" width="80" height="6" rx="3" fill="#f8c88a"/>
+    <rect x="375" y="358" width="50" height="5" rx="2.5" fill="#f0b878"/>
+    <rect x="352" y="372" width="96" height="4" rx="2" fill="#e8a868"/>
+    <rect x="368" y="386" width="64" height="4" rx="2" fill="#dfa060"/>
+  </g>
+
+  <!-- 海面 -->
+  <rect x="0" y="340" width="800" height="260" fill="url(#sea)"/>
+
+  <!-- 海浪波纹 -->
+  <g stroke="#a9c2d4" stroke-width="2" fill="none" opacity="0.35">
+    <path d="M 0 400 Q 50 392 100 400 T 200 400 T 300 400 T 400 400 T 500 400 T 600 400 T 700 400 T 800 400"/>
+    <path d="M 0 450 Q 60 442 120 450 T 240 450 T 360 450 T 480 450 T 600 450 T 720 450 T 800 450"/>
+    <path d="M 0 500 Q 40 493 80 500 T 160 500 T 240 500 T 320 500 T 400 500 T 480 500 T 560 500 T 640 500 T 720 500 T 800 500"/>
+  </g>
+
+  <!-- 飞鸟 -->
+  <g stroke="#3d5a6e" stroke-width="3" fill="none" opacity="0.7" stroke-linecap="round">
+    <path d="M 150 140 Q 165 128 180 140 Q 195 128 210 140"/>
+    <path d="M 620 110 Q 632 100 644 110 Q 656 100 668 110"/>
+    <path d="M 250 200 Q 259 192 268 200 Q 277 192 286 200"/>
+  </g>
+
+  <!-- 底部暗色带（前景） -->
+  <rect x="0" y="560" width="800" height="40" fill="#2c4254" opacity="0.8"/>
+</svg>

@@ -12,7 +12,7 @@ params:
     posts: "地平线"
     summary: "地平线"
     about: "地平线"
-  footer: "&copy; [地平线](https://horizonzhao.netlify.app) {Year} · 所行即所愿"
+  footer: "&copy; [地平线](https://horizonzhao.netlify.app) 2024 - {Year} · 所行即所愿"
   logo:
     en:
       alt: "地平线"

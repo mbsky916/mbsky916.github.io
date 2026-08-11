@@ -22,7 +22,7 @@ comments: true
 
 <div class="col-img">
 
-<img src="/images/logo.png" alt="地平线">
+<img src="/images/horizon-scenery.svg" alt="日出地平线">
 
 </div>
 

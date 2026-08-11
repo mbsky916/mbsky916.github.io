@@ -1,11 +1,13 @@
 {{ define "page-list" }}
-{{ $prevMonth := "" }}
+{{ if eq .Section "posts" }}
+{{ $prevYear := "" }}
 {{ range .RegularPages }}
-{{ $m := .Date.Format "2006-01" }}
-{{ if ne $m $prevMonth }}
-{{ if $prevMonth }}</div>{{ end }}
-<div class="list-group" data-month="{{ $m }}">
-{{ $prevMonth = $m }}
+{{ $y := .Date.Format "2006" }}
+{{ if ne $y $prevYear }}
+{{ if $prevYear }}</div>{{ end }}
+<h2 class="year-heading">{{ $y }}</h2>
+<div class="list-group">
+{{ $prevYear = $y }}
 {{ end }}
 <div class="list-item">
 <span class="list-date">{{ .Date.Format "2006-01-02" }}</span>
@@ -13,4 +15,5 @@
 </div>
 {{ end }}
 </div>
+{{ end }}
 {{ end }}

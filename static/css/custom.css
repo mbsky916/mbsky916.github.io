@@ -387,10 +387,10 @@ html body {
   text-underline-offset: 4px;
 }
 
-/* ===== 总结页：周索引 TOC（4 列 + 左竖线） ===== */
+/* ===== 总结页：周索引 TOC（2 列 + 黑点） ===== */
 body.summary #TableOfContents {
-  columns: 4;
-  column-gap: 2.5em;
+  columns: 2;
+  column-gap: 3em;
   border-left: 1px solid #c0c0c0;
   padding-left: 1.5em;
   margin: 1.5em 0 2.5em;
@@ -405,14 +405,14 @@ body.summary #TableOfContents li {
   white-space: nowrap;
   font-size: 0.95em;
 }
+body.summary #TableOfContents li::before {
+  content: "• ";
+}
 body.summary #TableOfContents a {
   font-weight: 600;
 }
 body.summary #TableOfContents a:hover {
   text-decoration: underline;
-}
-@media (max-width: 768px) {
-  body.summary #TableOfContents { columns: 2; }
 }
 
 /* ===== 关于页：TOC 灰框两列 ===== */
@@ -436,4 +436,15 @@ body.about #TableOfContents li {
   font-weight: 600;
   font-size: 0.9em;
   font-family: var(--sys-font-family), sans-serif;
+}
+body.about #TableOfContents li::before {
+  content: "• ";
+}
+
+/* ===== 日志页：年份标题 ===== */
+.year-heading {
+  margin: 1.5em 0 0.5em;
+  font-size: 1.3em;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 0.3em;
 }
