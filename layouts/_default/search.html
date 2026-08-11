@@ -1,0 +1,92 @@
+{{ partial "header.html" . }}
+<div class="article-meta">
+<h1 class="title">搜索</h1>
+</div>
+
+<div class="main">
+<div class="search-page">
+  <input type="search" id="search-input" placeholder="输入关键词，如：忙总、审计、总结…" autofocus>
+  <div id="search-status" class="search-status"></div>
+  <div id="search-results" class="search-results"></div>
+</div>
+</div>
+
+<style type="text/css">
+.search-page { max-width: 40em; margin: 0 auto; }
+#search-input {
+  width: 100%;
+  font-size: 1.1em;
+  padding: 0.6em 0.9em;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+}
+#search-status { color: #999; margin-top: 0.8em; }
+.search-results { margin-top: 1em; }
+.search-item { margin-bottom: 1.6em; }
+.search-item a { font-size: 1.1em; }
+.search-item .snippet { color: #666; font-size: 0.92em; margin-top: 0.3em; line-height: 1.6; }
+.search-item mark { background: #fff3bf; padding: 0 0.1em; }
+</style>
+
+<script>
+(function () {
+  const input = document.getElementById("search-input");
+  const results = document.getElementById("search-results");
+  const status = document.getElementById("search-status");
+  let index = null;
+
+  fetch("{{ "index.json" | relURL }}")
+    .then(function (r) { return r.json(); })
+    .then(function (data) { index = data; status.textContent = "已索引 " + data.length + " 篇内容，输入关键词开始搜索"; })
+    .catch(function () { status.textContent = "索引加载失败，请刷新重试"; });
+
+  function escapeHtml(s) {
+    return s.replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  function snippet(text, q, len) {
+    const i = text.toLowerCase().indexOf(q.toLowerCase());
+    if (i < 0) return escapeHtml(text.slice(0, len)) + "…";
+    const start = Math.max(0, i - Math.floor(len / 3));
+    const end = Math.min(text.length, i + q.length + Math.floor(len * 0.6));
+    return (start > 0 ? "…" : "") + escapeHtml(text.slice(start, end)) + (end < text.length ? "…" : "");
+  }
+
+  function search(q) {
+    if (!index) return;
+    q = q.trim();
+    if (!q) { results.innerHTML = ""; status.textContent = "已索引 " + index.length + " 篇内容，输入关键词开始搜索"; return; }
+    const ql = q.toLowerCase();
+    const hits = index.filter(function (item) {
+      return (item.title && item.title.toLowerCase().indexOf(ql) >= 0) ||
+             (item.content && item.content.toLowerCase().indexOf(ql) >= 0);
+    });
+    if (hits.length === 0) {
+      results.innerHTML = "";
+      status.textContent = "没有找到与「" + escapeHtml(q) + "」相关的内容";
+      return;
+    }
+    status.textContent = "找到 " + hits.length + " 条结果";
+    results.innerHTML = hits.map(function (item) {
+      const title = item.title || "无标题";
+      const shown = escapeHtml(title);
+      const snip = snippet(item.content || "", q, 120);
+      return '<div class="search-item"><a href="' + item.uri + '">' + shown + '</a>' +
+             '<div class="snippet">' + snip + '</div></div>';
+    }).join("");
+  }
+
+  let timer = null;
+  input.addEventListener("input", function () {
+    clearTimeout(timer);
+    timer = setTimeout(function () { search(input.value); }, 200);
+  });
+  input.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") { clearTimeout(timer); search(input.value); }
+  });
+})();
+</script>
+{{ partial "footer.html" . }}
