@@ -400,12 +400,15 @@ body.summary #TableOfContents ul {
   padding-left: 0;
   margin: 0;
 }
-body.summary #TableOfContents li {
+body.summary #TableOfContents li,
+body.summary #TableOfContents > a {
+  display: block;
   margin: 0.35em 0;
   white-space: nowrap;
   font-size: 0.95em;
 }
-body.summary #TableOfContents li::before {
+body.summary #TableOfContents li::before,
+body.summary #TableOfContents > a::before {
   content: "• ";
 }
 body.summary #TableOfContents a {
