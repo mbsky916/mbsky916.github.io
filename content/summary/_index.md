@@ -6,6 +6,7 @@ title: "总结"
 <div class="meta-line small">地平线 / 2026-01-01</div>
 <ul>
 <li><a href="/summary/2026/#第-33-周0810-0816">第 33 周（0810-0816）</a></li>
+<li><a href="/summary/2026/#第-34-周0817-0823">第 34 周（0817-0823）</a></li>
 </ul>
 <h2 class="toc-line"><a href="/summary/2025/">2025 年周总结</a><span class="dots"></span><span class="page-num small"></span></h2>
 <div class="meta-line small">地平线 / 2025-01-01</div>
