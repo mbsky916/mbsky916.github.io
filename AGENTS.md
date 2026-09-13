@@ -1,38 +1,27 @@
-# AGENTS.md — 博客站点（site/）操作简版
+# 站点仓库 Agent 规则
 
-> 完整交接文档在上级目录 `Blog/AGENTS.md`（D:\OneDrive - vip365\Hermes work\Blog\AGENTS.md），先读它。
-> 本文件是 site 仓库内的简版速查。
+## 适用范围与事实
 
-## 事实
+本文件只补充 `site/` 独立 Git 仓库的站点操作；博客根目录的通用规则和周总结采集流程按需使用上级文件。
 
-- 线上：https://horizonzhao.netlify.app/（push master 自动构建，约 1 分钟生效，不可撤回）
-- 仓库：git@github.com:mbsky916/mbsky916.github.io.git
-- Hugo：`C:\Users\zhao\AppData\Local\Microsoft\WinGet\Packages\Hugo.Hugo.Extended_Microsoft.Winget.Source_8wekyb3d8bbwe\hugo.exe`
-- git 用户：mbsky916 / 970200572@qq.com
+- 内容：`content/posts/` 为文章，`content/summary/` 为按年份保存的周总结，`content/summary/_index.md` 为总结索引。
+- 根配置：`hugo.yaml`；当前主题为 `paged`。不要另建同级 `hugo.toml`。
+- Hugo 可执行文件：`C:\Users\zhao\AppData\Local\Microsoft\WinGet\Packages\Hugo.Hugo.Extended_Microsoft.Winget.Source_8wekyb3d8bbwe\hugo.exe`。
+- `netlify.toml` 配置 Netlify 构建；`.github/workflows/deploy.yml` 另定义了 GitHub Pages 部署。内容任务不切换、删除或重写部署目标。
 
-## 内容结构
+## 本地内容操作
 
-- `content/posts/` — 文章（YYYY-MM-DD-主题.md，front matter：title/date/tags）
-- `content/summary/` — 周总结，一年一个文件（2025.md、2026.md），`_index.md` 是年度索引
-- `content/about.md`、`content/search.md` — 关于页、搜索页
+- 用户明确要求修改时，直接编辑目标文件并做必要检查，不为安全的本地步骤逐项等待确认。
+- 周总结候选内容必须先展示；只有用户明确说“写入本周总结”或“保存”后，才更新 `content/summary/<年份>.md`，并同步已有索引格式。写入不触发提交或推送。
+- 写入前检查目标周是否已存在，写入后检查标题、三节内容、重复周和文件状态。失败就修复后重查。
 
-## 发布流程（用户明确说"发"才执行）
+## 构建与发布
 
-1. mv 草稿（上级 `Blog/drafts/`）到 `content/posts/`
-2. 构建验证：`hugo --gc --cleanDestinationDir --minify`，必须 0 ERROR
-3. `git add <新文件> && git commit -m "post: <标题>" && git push origin master`
-4. 等 60-90 秒，curl 线上 URL 验证 HTTP 200
+- 本地构建命令：`hugo --gc --cleanDestinationDir --minify`，在仓库根目录执行并确认无错误。
+- 只有用户明确说“发/发布博客”时，才执行 `git add`、提交和 `git push origin master`。提交只包含本次任务文件。
+- 推送后验证公开地址 <https://horizonzhao.netlify.app/>；没有成功响应时如实报告，不把本地构建当成线上发布成功。
 
-## 周总结流程
+## 安全边界
 
-- 追加到 `content/summary/<年份>.md`，格式：`## 第 XX 周（MMDD-MMDD）` + **工作：**/**生活：**/**下周：**
-- 新增年份板块时更新 `_index.md`
-- 素材：用户口述优先，其次每日日志（D:/OneDrive/600giteexiangmu/My libray/02-Daily/2026年/）；**不编造生活细节**
-
-## 红线
-
-1. 用户没说"发"绝不 push（Netlify 自动构建，不可撤回）
-2. 不写公司机密、同事隐私、客户信息；不虚构事实
-3. 主题名全小写匹配 themes/ 目录（Linux 构建大小写敏感）
-4. 构建 0 ERROR 才算通过；hugo.toml 与 hugo.yaml 不能并存
-5. 删除文件先列清单等用户确认
+- 不写入公司机密、同事隐私、客户信息或未经确认的敏感细节；不编造素材。
+- 不批量删除或递归清理文件。删除时只处理用户明确指定的单个路径，并保留无关改动。
