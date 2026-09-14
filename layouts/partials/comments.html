@@ -1,12 +1,11 @@
 {{- $comments := site.Params.comments -}}
 {{- $enabled := default false $comments.enabled -}}
-{{- $isPost := eq .Section "posts" -}}
 {{- $commentsEnabled := true -}}
 {{- if isset .Params "comments" -}}
   {{- $commentsEnabled = .Params.comments -}}
 {{- end -}}
 {{- $disabled := or (eq .Params.disable_comments true) (not $commentsEnabled) -}}
-{{- if and $enabled $isPost (not $disabled) .Content -}}
+{{- if and $enabled (not $disabled) .Content -}}
 <section class="fullwidth comments" aria-label="评论">
   <script src="https://giscus.app/client.js"
     data-repo="{{ $comments.repo }}"
