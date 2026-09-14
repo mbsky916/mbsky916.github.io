@@ -1,3 +1,19 @@
-{{ if and (not .Params.disable_comments) (and (not .IsHome) .Content) (not .IsNode) }}
-{{ partial "comments.html" . }}
-{{ end }}
+{{- if and (not .IsHome) .Content .IsPage -}}
+  {{ partial "comments.html" . }}
+{{- end -}}
+{{- if and .IsPage (not .IsHome) -}}
+<script>
+(function () {
+  document.querySelectorAll(".single .main table").forEach(function (table) {
+    if (table.parentElement && table.parentElement.classList.contains("table-scroll")) return;
+    var wrapper = document.createElement("div");
+    wrapper.className = "table-scroll";
+    wrapper.setAttribute("role", "region");
+    wrapper.setAttribute("tabindex", "0");
+    wrapper.setAttribute("aria-label", "可横向滚动的数据表格");
+    table.parentNode.insertBefore(wrapper, table);
+    wrapper.appendChild(table);
+  });
+})();
+</script>
+{{- end -}}

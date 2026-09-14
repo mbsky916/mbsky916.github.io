@@ -1,5 +1,6 @@
 ---
 title: Home
+description: "记录所思所想及日常。所行即所愿。"
 ---
 
 <style type="text/css">

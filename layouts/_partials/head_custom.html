@@ -1,1 +1,17 @@
-{{/* 覆盖主题默认：移除 Jost 无衬线字体，保持衬线字体栈（见 css/fonts.css） */}}
+{{/* 站点级 SEO 与分享信息；正文字体由 css/fonts.css 统一控制。 */}}
+<link rel="canonical" href="{{ .Permalink }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:locale" content="{{ replace .Site.Language.Locale "-" "_" }}">
+{{ if .IsHome }}
+<meta property="og:description" content="{{ .Site.Params.description }}">
+{{ end }}
+{{ if and (or (eq .Kind "taxonomy") (eq .Kind "term") (eq .Kind "404")) (not .Description) }}
+  {{ $fallback := .Site.Params.description }}
+  {{ if eq .Kind "404" }}{{ $fallback = "页面未找到，请返回首页或浏览文章。" }}{{ end }}
+  {{ if eq .Kind "taxonomy" }}{{ $fallback = "浏览地平线博客的文章分类与标签。" }}{{ end }}
+  {{ if eq .Kind "term" }}{{ $fallback = printf "%s：浏览地平线博客的相关内容。" .Title }}{{ end }}
+<meta name="description" content="{{ $fallback | plainify }}">
+<meta property="og:description" content="{{ $fallback | plainify }}">
+{{ end }}
+<meta name="theme-color" content="#f6f1e8">

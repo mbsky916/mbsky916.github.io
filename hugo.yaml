@@ -8,6 +8,12 @@ paginate: 10
 
 params:
   description: "记录所思所想及日常。所行即所愿。"
+  comments:
+    enabled: true
+    repo: "mbsky916/mbsky916.github.io"
+    repo_id: "R_kgDOM21I2g"
+    category: "Announcements"
+    category_id: "DIC_kwDOM21I2s4Ci5Hr"
   author:
     posts: "地平线"
     summary: "地平线"

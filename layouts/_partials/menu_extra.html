@@ -1,0 +1,8 @@
+{{- if not .IsHome -}}
+<a href="{{ relURL "categories/" }}">分类</a>
+<a href="{{ relURL "tags/" }}">标签</a>
+{{- with .Section }}
+<a href="{{ relURL . }}/index.xml" type="application/rss+xml" title="RSS 订阅">RSS订阅</a>
+{{- end }}
+<a href="#">返回顶部</a>
+{{- end -}}

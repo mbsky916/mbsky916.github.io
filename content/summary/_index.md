@@ -1,20 +1,4 @@
 ---
 title: "总结"
+description: "按年份整理的工作、学习、家庭与生活周总结。"
 ---
-
-<h2 class="toc-line"><a href="/summary/2026/">2026 年周总结</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">地平线 / 2026-01-01</div>
-<ul>
-<li><a href="/summary/2026/#第-33-周0810-0816">第 33 周（0810-0816）</a></li>
-<li><a href="/summary/2026/#第-34-周0817-0823">第 34 周（0817-0823）</a></li>
-<li><a href="/summary/2026/#第-35-周0824-0830">第 35 周（0824-0830）</a></li>
-<li><a href="/summary/2026/#第-36-周0831-0906">第 36 周（0831-0906）</a></li>
-<li><a href="/summary/2026/#第-37-周0907-0913">第 37 周（0907-0913）</a></li>
-</ul>
-<h2 class="toc-line"><a href="/summary/2025/">2025 年周总结</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">地平线 / 2025-01-01</div>
-<ul>
-<li><a href="/summary/2025/#第-01-周1230-0105">第 01 周（1230-0105）</a></li>
-<li><a href="/summary/2025/#第-35-周0825-0831">第 35 周（0825-0831）</a></li>
-<li><a href="/summary/2025/#第-36-周0901-0907">第 36 周（0901-0907）</a></li>
-</ul>

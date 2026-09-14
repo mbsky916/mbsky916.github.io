@@ -15,5 +15,15 @@
 </div>
 {{ end }}
 </div>
+{{ else if eq .Section "summary" }}
+<section class="summary-index-grid" aria-label="年度总结">
+{{ range .RegularPages }}
+<a class="summary-card" href="{{ .RelPermalink }}">
+  <span class="summary-card__year">{{ .Date.Format "2006" }}</span>
+  <strong>{{ .Title }}</strong>
+  <span class="summary-card__meta">{{ .Params.subtitle | default "年度周总结" }}</span>
+</a>
+{{ end }}
+</section>
 {{ end }}
 {{ end }}
